@@ -1,0 +1,68 @@
+
+ <div class="container">
+
+        <!-- Page Heading -->
+<%= form_tag(solucoes_path, :method => :get) do %>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header-port">Do que Seria seu Problema?</h1>
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <%= text_field_tag 'search', nil, placeholder: 'Search for...', class: 'form-control' %>
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" value="Go!" name="commit">Go! <i class="fa fa-search"></i></button>
+                    </span>
+                </div><!-- /input-group -->
+  </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+            <% @produtos.each do |produto| %>
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+     
+                <h3><%= produto.descricao%></h3>
+                <h4>Subheading</h4>
+                <p class="lead"><hr class="section-heading-spacer"><%= produto.descricaocompleta%></hr></p>
+
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon"><i class="fa fa-arrow-circle-right"></i></span></a>
+            </div>
+        </div>
+        <%end%> 
+        
+        <!-- Pagination -->
+        <hr>
+          <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                     <li><%= will_paginate @produtos, class: 'paginacao' %></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    
+        <!-- /.row -->
+        <%end%>
+        <hr>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->

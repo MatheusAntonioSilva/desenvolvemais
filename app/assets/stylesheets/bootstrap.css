@@ -1,0 +1,175 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+  input{
+  	width: 360px;
+  }
+
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 60px;
+}
+
+.menu{
+width: 100px;
+background-color: #f8f8f8;
+border-color: #e7e7e7;
+
+
+}
+
+
+.slidebar .sidebar-menu .active .treeview-menu{
+  display: block;
+}
+
+
+.form-control{
+  width: 300px;
+}
+
+/*Pagina de Inicio */
+
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url('/assets/intro-bg.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+
+.intro-divider {
+
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.list-inline-item {
+    display: inline-block;
+}
+
+.btn-lg {
+    padding: .75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: .3rem;
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.btn-secondary {
+    color: #292b2c;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.offset-lg-2 {
+    margin-left: 16.666667%;
+}
+.section-heading {
+    margin-bottom: 30px;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.push-lg-7 {
+    left: 58.333333%;
+}
+.pull-lg-5 {
+    right: 41.666667%;
+}
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url('/assets/banner-bg.jpg') no-repeat center center;
+    background-size: cover;
+}
+.col-lg-6 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.list-inline-item {
+    display: inline-block;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.btn-primeiro {
+    color: #fff;
+    background-color: #00a65a;
+    border-color: #fff;
+    font-family: "Arial";
+}
+
+/*Portifolio-descritivo*/ 
+
+.page-header-port {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+.col-lg-12 {
+    width: 100%;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.a{
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #428bca;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parcela:</strong>
+  <%= @financeiro.parcela %>
+</p>
+
+<p>
+  <strong>Data emissa:</strong>
+  <%= @financeiro.data_emissa %>
+</p>
+
+<p>
+  <strong>Data vencimento:</strong>
+  <%= @financeiro.data_vencimento %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @financeiro.valor %>
+</p>
+
+<p>
+  <strong>Data rebimento:</strong>
+  <%= @financeiro.data_rebimento %>
+</p>
+
+<p>
+  <strong>Valor recebido:</strong>
+  <%= @financeiro.valor_recebido %>
+</p>
+
+<%= link_to 'Edit', edit_financeiro_path(@financeiro) %> |
+<%= link_to 'Back', financeiros_path %>

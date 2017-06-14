@@ -1,0 +1,49 @@
+<div class="container">
+
+    <%= form_for(@produto_chafe, html: { class: 'form-horizontal' }) do |f| %>
+        <div class="row">
+            <% if @produto_chafe.errors.any? %>
+                <div class="alert alert-error">
+                    <h3>
+                        <%= pluralize(@produto_chafe.errors.count, "error") %> prohibited this job from being saved:</h3>
+
+                    <ul>
+                        <% @produto_chafe.errors.full_messages.each do |msg| %>
+                            <li>
+                                <%= msg %>
+                            </li>
+                            <% end %>
+                    </ul>
+                </div>
+                <% end %>
+
+                    <div class="control-group">
+                        <%= f.label :'Produtos:', class: 'control-label' %>
+                            <div class="controls">
+                                <%= f.collection_select :produto_id, @produto, :id, :descricao, {}, class: 'form-control ', rows: 5 %>
+                            </div>
+                    </div>
+
+                    <li>
+
+
+                    </li>
+                    <% @palavras_chafe.each do |palavra| %>
+
+                        <div class="checkbox">
+
+
+                            <label><%= h palavra.palavra -%></label>
+                            <%= f.check_box_tag 'palavrachafe_id[]', palavra.id  %>
+
+
+                        </div>
+                        <% end %>
+                            <div class="control-group controls">
+                                <%= f.submit class: 'btn btn-primary' %>
+                            </div>
+
+                            <% end %>
+
+        </div>
+</div>

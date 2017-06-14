@@ -1,0 +1,30 @@
+
+<div class="container">
+
+<%= form_for(@grupo, html: { class: 'form-horizontal' }) do |f| %>
+ <div class="row">
+  <% if @grupo.errors.any? %>
+    <div class="alert alert-error">
+      <h3><%= pluralize(@grupo.errors.count, "error") %> prohibited this job from being saved:</h3>
+
+      <ul>
+      <% @grupo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :descricao, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descricao%>
+    </div>
+  </div>
+    <div class="control-group controls">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+  
+<% end %>
+</div>
+</div>

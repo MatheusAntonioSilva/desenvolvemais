@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<%= link_to "Adicionar Titulo", new_financeiro_path, class: "btn btn-primary btn-lg "%>
+ <div class="box-produtos">
+            <div class="box-header">
+              <h3 class="box-title">Financeiro</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Parcela</th>
+      <th>Data emissa</th>
+      <th>Data vencimento</th>
+      <th>Valor</th>
+      <th>Data rebimento</th>
+      <th>Valor recebido</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% todos = Financeiro.all  %>
+      <% todos.each do |financeiro| %>
+      <tr>
+        <td><%= financeiro.parcela %></td>
+        <td><%= financeiro.data_emissa %></td>
+        <td><%= financeiro.data_vencimento %></td>
+        <td><%= financeiro.valor %></td>
+        <td><%= link_to 'Alterar', edit_financeiro_path(financeiro) %></td>
+        <td><%= link_to 'Destroy', financeiro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ </div>
+</div>
+

@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  cpf_cnpj: MyString
+  rg: MyString
+  telefone: MyString
+  apelido: MyString
+  fisica_juridica: false
+  dt_nacimento: 2017-04-28
+  cliente: false
+  fornecedor: false
+  cep: MyString
+  endereco: MyString
+  numero: 
+  ibge: 
+  bairro: MyString
+  cidade: 
+  uf: MyString
+  pais: MyString
+
+two:
+  nome: MyString
+  cpf_cnpj: MyString
+  rg: MyString
+  telefone: MyString
+  apelido: MyString
+  fisica_juridica: false
+  dt_nacimento: 2017-04-28
+  cliente: false
+  fornecedor: false
+  cep: MyString
+  endereco: MyString
+  numero: 
+  ibge: 
+  bairro: MyString
+  cidade: 
+  uf: MyString
+  pais: MyString

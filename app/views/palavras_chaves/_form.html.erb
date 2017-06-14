@@ -1,0 +1,29 @@
+<div class="container">
+
+<%= form_for(@palavras_chafe, html: { class: 'form-horizontal' }) do |f| %>
+ <div class="row">
+  <% if@palavras_chafe.errors.any? %>
+    <div class="alert alert-error">
+      <h3><%= pluralize(@palavras_chafe.errors.count, "error") %> prohibited this job from being saved:</h3>
+
+      <ul>
+      <% @palavras_chafe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :'Palavra:', class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :palavra%>
+    </div>
+  </div>
+    <div class="control-group controls">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+  
+<% end %>
+</div>
+</div>

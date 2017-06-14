@@ -1,0 +1,134 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require adminlte
+*= require skin-blue
+ */
+
+.slidebar .sidebar-menu .active .treeview-menu {
+    display: block;
+}
+
+.form-control {
+    width: 300px;
+}
+
+.box-produtos {
+    padding-right: 100px;
+}
+
+.button_to {
+    width: 20px;
+}
+
+.control {
+    width: 300px;
+}
+
+.nav-rodape {
+    font-size: 18px;
+}
+
+.esquerda {
+    padding-left: 200px;
+}
+
+.controls-area {
+    width: 360px;
+    text-align: left;
+}
+
+.completa {
+    width: 360px;
+    text-align: left;
+}
+
+.completa {
+    width: 360px;
+    text-align: left;
+}
+
+.yield {
+    padding-top: 30px;
+}
+
+.formuser {
+    padding-top: 30px;
+}
+
+.current {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #428bca;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    z-index: 2;
+    color: #fff;
+    background-color: #428bca;
+    border-color: #428bca;
+    cursor: default;
+}
+
+.paginacao {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.paginacao>a {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #428bca;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}
+
+.previous_page {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #428bca;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}
+
+.next_page.disabled {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #428bca;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}
+
+.buton-palavrachave {
+    padding-top: 50px;
+    float: right;
+    padding-right: 20px;
+}

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  preco: 1.5
+  custo: 1.5
+  precovenda: 1.5
+  margembruta: 1.5
+  margemliquida: 1.5
+
+two:
+  preco: 1.5
+  custo: 1.5
+  precovenda: 1.5
+  margembruta: 1.5
+  margemliquida: 1.5

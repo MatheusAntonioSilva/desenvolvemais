@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  codbarra: MyString
+  codfabrica: MyString
+  unidade: MyString
+
+two:
+  descricao: MyString
+  codbarra: MyString
+  codfabrica: MyString
+  unidade: MyString

@@ -1,0 +1,30 @@
+
+<div class="container">
+
+<%= form_for(@tipo_projeto, html: { class: 'form-horizontal' }) do |f| %>
+ <div class="row">
+  <% if @tipo_projeto.errors.any? %>
+    <div class="alert alert-error">
+      <h3><%= pluralize(@tipo_projeto.errors.count, "error") %> prohibited this job from being saved:</h3>
+
+      <ul>
+      <% @tipo_projeto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :'Tipo do Projeto:', class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tipo%>
+    </div>
+  </div>
+    <div class="control-group controls">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+  
+<% end %>
+</div>
+</div>

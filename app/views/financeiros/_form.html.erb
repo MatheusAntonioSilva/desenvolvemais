@@ -1,0 +1,41 @@
+<%= form_for(@financeiro) do |f| %>
+  <% if @financeiro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@financeiro.errors.count, "error") %> prohibited this financeiro from being saved:</h2>
+
+      <ul>
+      <% @financeiro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :parcela %><br>
+    <%= f.number_field :parcela %>
+  </div>
+  <div class="field">
+    <%= f.label :data_emissa %><br>
+    <%= f.date_select :data_emissa %>
+  </div>
+  <div class="field">
+    <%= f.label :data_vencimento %><br>
+    <%= f.date_select :data_vencimento %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br>
+    <%= f.text_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :data_rebimento %><br>
+    <%= f.date_select :data_rebimento %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_recebido %><br>
+    <%= f.text_field :valor_recebido %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
