@@ -1,11 +1,11 @@
 class ClassificacoesController < ApplicationController
-    before_filter :authorize_user, only: [:show, :edit, :update, :destroy, :index]
+    before_filter :authorize_user, only: [:show, :create, :edit, :update, :destroy, :index]
 def new
-    @classificacoe = Classificacoe.new
+    @classificacoe = current_user.classificacoes.build
   end
 
   def create
-    @classificacoe = Classificacoe.new(params[:classificacoe].permit(:descricao))
+    @classificacoe = current_user.classificacoes.build(params[:classificacoe].permit(:descricao))
 
     if @classificacoe.save
       redirect_to classificacoes_index_path, notice: "Classificação Cadastrada com sucesso"
@@ -15,12 +15,8 @@ def new
   end
 
    def index
-    @classificacoe = Classificacoe.all
+    @classificacoe = current_user.classificacoes
 
-    respond_to do |format|
-      format.html  #index.html.erb
-      format.json {render json: @classificacoe}
-    end
 
   end
 
@@ -30,13 +26,13 @@ def new
     end
 
   def edit
-    @classificacoe =Classificacoe.all
-    @classificacoe = Classificacoe.find(params[:id])
-
+    @classificacoe = current_user.classificacoes.find(params[:id])
+   
 
   end
 
    def update
+     @classificacoe = current_user.classificacoes.find(params[:id])
     respond_to do |format|
       if @classificacoe.update(classificacoe_params)
         format.html { redirect_to classificacoes_index_path, notice: "Classificação Alterada com Sucesso" }
@@ -50,8 +46,8 @@ def new
   end
 
   def destroy
-      id = params[:id]
-      Classificacoe.destroy id
+      @classificacoe = current_user.classificacoes.find(params[:id])
+      @classificacoe.destroy
       redirect_to classificacoes_index_path
     end
 

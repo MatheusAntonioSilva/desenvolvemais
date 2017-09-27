@@ -1,5 +1,13 @@
-<h1>New Subgrupo</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', subgrupos_path %>
+<section class="content-header">
+    <h1>Novo Subgrupo</h1>
+    <ol class="breadcrumb">
+        <a class="btn btn-app" href="<%= subgrupos_index_path %>">
+            <i class="fa fa-reply"></i> Voltar
+        </a>
+    </ol>
+</section>
+<section class="content">
+    <div class="container">
+        <%= render 'form' %>
+    </div>
+</section>

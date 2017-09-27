@@ -1,0 +1,2 @@
+module IdeiaHelper
+end

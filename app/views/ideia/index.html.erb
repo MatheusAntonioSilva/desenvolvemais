@@ -1,0 +1,60 @@
+<!-- Header -->
+<section class="ideia" style="text-align: center;">
+    <section class="content">
+
+
+
+
+
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas menuideia" style="float: right;">
+                <div class="list-group">
+                    <a href="paginas/empreededorismo.html" class="list-group-item">Necessidades de Mercado</a>
+                    <a href="paginas/empreededorismo.html" class="list-group-item">Freelances</a>
+                    <a href="paginas/governo.html" class="list-group-item">Empreededorismo</a>
+                    <a href="paginas/bolsadevalores.html" class="list-group-item">Bolsa de Valores</a>
+                    <a href="paginas/cursosgratuitos.html" class="list-group-item">Cursos Gratuitos</a>
+                    <a href="paginas/concursos.html" class="list-group-item">Governo</a>
+                    <a href="paginas/prrofissoes.html" class="list-group-item">Profissões</a>
+                    <a href="paginas/noticiasdomundo.html" class="list-group-item">Noticias do Mundo</a>
+                    <a href="paginas/brasil.html" class="list-group-item">Brasil</a>
+                    <a href="paginas/mercadodetrabalho.html" class="list-group-item">Mercado de Trabalho</a>
+
+                </div>
+            </div>
+            <% @ideia.each do |ideia| %>
+                <%if current_user != ideia.user %>
+                    <div class="col-md-7" style="float: left;">
+                        <h3>
+                            <%= ideia.descricao%>
+                        </h3>
+                        <h4>Subheading</h4>
+                        <p class="lead">
+
+                            <%= ideia.descricaocompleta%>
+
+                        </p>
+
+                        <a class="btn btn-primary" <%=link_to 'Interessou à Ideia', interessou_path(ideia) %></a>
+                        <hr class="section-heading-spacer"></hr>
+                    </div>
+
+
+                    <%end%>
+
+
+                        <%end%>
+                            <div class="col-md-5">
+
+
+                            </div>
+
+        </div>
+        <%= will_paginate @ideia, class: 'paginacao' %>
+
+
+    </section>
+</section>
+
+<!-- /.container -->

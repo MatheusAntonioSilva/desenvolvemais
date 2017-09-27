@@ -1,0 +1,65 @@
+<section class="content-header">
+    <p id="notice">
+        <%= notice %>
+    </p>
+    <%= link_to "Adicionar Agendamento", new_agenda_path, class: "btn btn-primary btn-lg "%>
+        <div class="box-produtos">
+            <div class="box-header">
+                <h3 class="box-title">Agenda</h3>
+
+                <div class="box-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<section class="content">
+    <!-- /.box-header -->
+    <div class="box box-body table-responsive no-padding">
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Horario</th>
+            </tr>
+
+            <% @agendas.each do |agenda| %>
+                <%if current_user.empresa_id == agenda.empresa_id %>
+                    <tr>
+                        <td>
+                            <%= agenda.id %>
+                        </td>
+                        <td>
+                            <%= agenda.descricao %>
+                        </td>
+                        <td>
+                            <%= agenda.data %>
+                        </td>
+                        <td>
+                            <%= agenda.horario_inicio %> as
+                                <%= agenda.horario_fim %>
+                        </td>
+                        <td>
+                            <%= link_to 'Visualizar'%>
+                        </td>
+                        <td>
+                            <%= link_to 'Alterar', edit_agenda_path(agenda.id)%>
+                        </td>
+                        <td>
+                            <%= link_to 'Excluir', agenda, data: { confirm: 'Are you sure?' } %>
+                        </td>
+                    </tr>
+                    <%end%>
+                        <%end%>
+        </table>
+
+        <!-- /.box-body -->
+    </div>
+</section>

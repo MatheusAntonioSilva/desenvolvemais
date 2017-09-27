@@ -4,7 +4,7 @@ class SubgruposController < ApplicationController
   # GET /subgrupos
   # GET /subgrupos.json
  def index
-    @subgrupo = Subgrupo.all
+    @subgrupo = current_user.subgrupos
 
     respond_to do |format|
       format.html  #index.html.erb
@@ -19,17 +19,18 @@ class SubgruposController < ApplicationController
 
   # GET /subgrupos/new
   def new
-    @subgrupo = Subgrupo.new
+    @subgrupo = current_user.subgrupos.build
   end
 
   # GET /subgrupos/1/edit
   def edit
+     @subgrupo = current_user.subgrupos.find(params[:id])
   end
 
   # POST /subgrupos
   # POST /subgrupos.json
  def create
-    @subgrupo= Subgrupo.new(params[:subgrupo].permit(:nome))
+    @subgrupo = current_user.subgrupos.build
 
     if @subgrupo.save
       redirect_to subgrupos_index_path, notice: "Subgrupo Cadastrado com sucesso"
@@ -41,6 +42,7 @@ class SubgruposController < ApplicationController
   # PATCH/PUT /subgrupos/1
   # PATCH/PUT /subgrupos/1.json
   def update
+    @subgrupo = current_user.subgrupos.find(params[:id])
     respond_to do |format|
       if @subgrupo.update(subgrupo_params)
         format.html { redirect_to subgrupos_index_path, notice: 'Subgrupo was successfully updated.' }
@@ -55,8 +57,8 @@ class SubgruposController < ApplicationController
   # DELETE /subgrupos/1
   # DELETE /subgrupos/1.json
  def destroy
-      id = params[:id]
-      Subgrupo.destroy id
+      @subgrupo = current_user.subgrupos.find(params[:id])
+      @subgrupo.destroy
       redirect_to subgrupos_index_path
     end
      def set_subgrupo

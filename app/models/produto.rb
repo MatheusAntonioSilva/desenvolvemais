@@ -4,10 +4,14 @@ class Produto < ActiveRecord::Base
 	belongs_to :classificacoe
 	belongs_to :subgrupo
 	belongs_to :user
+	belongs_to :modulo
 	belongs_to :tipo_projeto
 	belongs_to :plataforma
-	has_many :produto_chaves
-	has_many :palavras_chaves, through: :produto_chaves
+	has_many :produto_chave
+	has_many :parceiro_produtos
+
+	 accepts_nested_attributes_for :parceiro_produtos
+
 
 
 	def new

@@ -4,7 +4,7 @@ class TipoProjetosController < ApplicationController
   # GET /tipo_projetos
   # GET /tipo_projetos.json
   def index
-      @tipo_projeto = TipoProjeto.all
+      @tipo_projeto = current_user.tipo_projetos
 
     respond_to do |format|
       format.html  #index.html.erb
@@ -19,17 +19,18 @@ class TipoProjetosController < ApplicationController
 
   # GET /tipo_projetos/new
   def new
-    @tipo_projeto = TipoProjeto.new
+    @tipo_projeto = current_user.tipo_projetos.build
   end
 
   # GET /tipo_projetos/1/edit
   def edit
+       @tipo_projeto = current_user.tipo_projetos.find(params[:id])
   end
 
   # POST /tipo_projetos
   # POST /tipo_projetos.json
   def create
-    @tipo_projeto = TipoProjeto.new(tipo_projeto_params)
+    @tipo_projeto = current_user.tipo_projetos.build(tipo_projeto_params)
 
     respond_to do |format|
       if @tipo_projeto.save
@@ -45,6 +46,7 @@ class TipoProjetosController < ApplicationController
   # PATCH/PUT /tipo_projetos/1
   # PATCH/PUT /tipo_projetos/1.json
   def update
+     @tipo_projeto = current_user.tipo_projetos.find(params[:id])
     respond_to do |format|
       if @tipo_projeto.update(tipo_projeto_params)
         format.html { redirect_to tiposprojetos_index_path, notice: 'Tipo projeto was successfully updated.' }
@@ -59,8 +61,8 @@ class TipoProjetosController < ApplicationController
   # DELETE /tipo_projetos/1
   # DELETE /tipo_projetos/1.json
   def destroy
-      id = params[:id]
-      TipoProjeto.destroy id
+      @tipo_projeto = current_user.tipo_projetos.find(params[:id])
+      @tipo_projeto.destroy
       redirect_to tiposprojetos_index_path
     end
 

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Razsocial:</strong>
+  <%= @empresa.razsocial %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @empresa.cnpj %>
+</p>
+
+<p>
+  <strong>Fantasia:</strong>
+  <%= @empresa.fantasia %>
+</p>
+
+<p>
+  <strong>Data contrato:</strong>
+  <%= @empresa.data_contrato %>
+</p>
+
+<p>
+  <strong>Data vencimento:</strong>
+  <%= @empresa.data_vencimento %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @empresa.token %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @empresa.valor %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @empresa.status_id %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @empresa.tipo_id %>
+</p>
+
+<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
+<%= link_to 'Back', empresas_path %>

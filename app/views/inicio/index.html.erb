@@ -1,29 +1,119 @@
-
-    <!-- Temporary navbar container fix -->
-    <style>
+<!-- Temporary navbar container fix -->
+<style>
     .navbar-toggler {
         z-index: 1;
     }
     
     @media (max-width: 576px) {
-        nav > .container {
+        nav>.container {
             width: 100%;
         }
     }
-    </style>
+</style>
 
 
-    <!-- Navigation -->
-   
-    <!-- Header -->
-    <header class="intro-header">
-        <div class="container">
-            <div class="intro-message">
-                <h1>Bem Vindo!!!</h1>
-               <a href="<%= solucoes_path %>" class="btn btn-primeiro btn-lg"><i></i> <span class="network-name">Clique Aqui Para Resolver seu Problema</span></a><br><br><br>
-               <span class="network-name">Ajude-nos a Compartilhar essa Idéia</span>
-                <hr class="intro-divider">
-                <ul class="list-inline intro-social-buttons">
+<!-- Navigation -->
+
+<!-- Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="intro-message">
+            <h1>Bem Vindo!!!</h1>
+            <a href="<%= solucoes_path %>" class="btn btn-primeiro btn-lg"><i></i> <span class="network-name">Clique Aqui Para Resolver seu Problema</span></a><br><br><br>
+            <span class="network-name">Ajude-nos a Compartilhar essa Idéia</span>
+            <hr class="intro-divider">
+            <ul class="list-inline intro-social-buttons">
+                <li class="list-inline-item">
+                    <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<section class="content-section-a">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Encontre Todo Tipo de Solução para seus Problemas com Novas Inovações de Tecnologias<br>Todo tipo de Projeto</h2>
+                <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+            </div>
+            <div class="col-lg-5 offset-lg-2">
+                <img class="img-fluid" src="/assets/ipad.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+</section>
+
+<section class="content-section-b">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 push-lg-7">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Soluções Desktop<br>Sistemas e Projetos Desktops</h2>
+                <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop
+                    actions!
+                </p>
+            </div>
+            <div class="col-lg-5 pull-lg-5">
+                <img class="img-fluid" src="/assets/dog.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</section>
+<!-- /.content-section-b -->
+
+<section class="content-section-a">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Soluções Mobile<br>Entre Soluções de Problemas com seu Smartphone</h2>
+                <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+            </div>
+            <div class="col-lg-5 offset-lg-2">
+                <img class="img-fluid" src="/assets/phones.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</section>
+<!-- /.content-section-a -->
+
+<aside class="banner">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Connect to Start Bootstrap:</h2>
+            </div>
+            <div class="col-lg-6">
+                <ul class="list-inline banner-social-buttons">
                     <li class="list-inline-item">
                         <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
@@ -33,129 +123,38 @@
                     <li class="list-inline-item">
                         <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                     </li>
-
                 </ul>
             </div>
         </div>
-    </header>
 
-    <!-- Page Content -->
-    <section class="content-section-a">
+    </div>
+    <!-- /.container -->
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Encontre Todo Tipo de Solução para seus Problemas com Novas Inovações de Tecnologias<br>Todo tipo de Projeto</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
-                </div>
-                <div class="col-lg-5 offset-lg-2">
-                    <img class="img-fluid" src="/assets/ipad.png" alt="">
-                </div>
-            </div>
+</aside>
+<!-- /.banner -->
 
-        </div>
-        <!-- /.container -->
-    </section>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a class="nav-rodape" href="#">Home</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+                <a class="nav-rodape" href="#about">About</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+                <a class="nav-rodape" href="#services">Services</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+                <a class="nav-rodape" href="#contact">Contact</a>
+            </li>
+        </ul>
+        <p class="copyright text-muted small">Copyright &copy; Your Company 2017. All Rights Reserved</p>
+    </div>
+</footer>
 
-    <section class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 push-lg-7">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Soluções Desktop<br>Sistemas e Projetos Desktops</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-                </div>
-                <div class="col-lg-5 pull-lg-5">
-                    <img class="img-fluid" src="/assets/dog.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </section>
-    <!-- /.content-section-b -->
-
-    <section class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Soluções Mobile<br>Entre Soluções de Problemas com seu Smartphone</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-                </div>
-                <div class="col-lg-5 offset-lg-2">
-                    <img class="img-fluid" src="/assets/phones.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </section>
-    <!-- /.content-section-a -->
-
-    <aside class="banner">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </aside>
-    <!-- /.banner -->
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a class="nav-rodape" href="#">Home</a>
-                </li>
-                <li class="footer-menu-divider list-inline-item">&sdot;</li>
-                <li class="list-inline-item">
-                    <a class="nav-rodape" href="#about">About</a>
-                </li>
-                <li class="footer-menu-divider list-inline-item">&sdot;</li>
-                <li class="list-inline-item">
-                    <a  class="nav-rodape" href="#services">Services</a>
-                </li>
-                <li class="footer-menu-divider list-inline-item">&sdot;</li>
-                <li class="list-inline-item">
-                    <a  class="nav-rodape" href="#contact">Contact</a>
-                </li>
-            </ul>
-            <p class="copyright text-muted small">Copyright &copy; Your Company 2017. All Rights Reserved</p>
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-   
-
+<!-- Bootstrap core JavaScript -->

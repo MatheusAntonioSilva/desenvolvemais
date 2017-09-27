@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
- 
   root to: "inicio#index"
    get "login", to: "login#new"
    post "login", to: "login#create"
@@ -9,8 +7,12 @@ Rails.application.routes.draw do
    get "newestudante", to: "users#newestudante"
    get "newinvestidor", to: "users#newinvestidor"
    get "newcompany", to: "users#newcompany"
-   resources :users, only: [:newcompany, :create]
+   resources :users, only: [:newcompany, :create] 
+   resources :categories, only: [:new, :create, :edit, :update, :edit, :update]
+   get"/categories/:id" => "categories#destroy"
+   get "categorias/index", to: "categories#index"
    get "produtos/index", to: "produtos#index"
+   get '/solucoes/:id', to: 'solucoes#show' , as: 'solucoe'
    resources :produtos, only: [:new, :create, :edit, :update]
    get "produtos/index", to: "produtos#index"
    get"/produtos/:id" => "produtos#destroy"
@@ -21,9 +23,7 @@ Rails.application.routes.draw do
    resources :grupos, only: [:new, :create, :edit, :update, :edit, :update]
    get "grupos/index", to: "grupos#index"
    get"/grupos/:id" => "grupos#destroy"
-   resources :classificacoes, only: [:new, :create, :edit, :update]
-   get "classificacoes/index", to: "classificacoes#index"
-   get"/classificacoes/:id" => "classificacoes#destroy"
+ 
    get "subgrupos/index", to: "subgrupos#index"
    resources :subgrupos, only: [:new, :create, :edit, :update]
    get"/subgrupos/:id" => "subgrupos#destroy"
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
    get"/financeiro/:id" => "financeiros#destroy"
    get "inicio", to: "inicio#index"
    get "solucoes", to: "solucoes#index"
+   get "viewprodutos", to: "solucoes#produtos"
    get "palavras/index", to: "palavras_chaves#index" 
    resources :palavras_chaves, only: [:new, :create, :edit, :update]
    get "palavras_chaves/:id" => "palavras_chaves#destroy"
@@ -44,11 +45,49 @@ Rails.application.routes.draw do
    get "tiposprojetos/index", to: "tipo_projetos#index" 
    resources :tipo_projetos, only: [:new, :create, :edit, :update]
    get"/tipo_projetos/:id" => "tipo_projetos#destroy"
-   resources :produto_chaves, only: [:new, :create, :edit, :update]
+   get '/produtoschaves/:id', to: 'produto_chaves#show' , as: 'produtochaves'
+    get '/produtoschaves/:produto_id', to: 'produtos#associacao' , as: 'associacao'
+   resources :produto_chaves, only: [:new,  :create, :edit, :update]
+ 
+   resources :visitantes, only: [:new, :create]
+  resources :parceiro_produtos
+   get "interesse/index", to: "parceiro_produtos#index"
+   get "interesse/new", to: "parceiro_produtos#interesse" 
+   get "interesse/adicionarinteresse", to: "parceiro_produtos#adicionarinteresse" 
+   get '/interesses/:id', to: 'parceiro_produtos#produto' , as: 'interesse'
+  get "visitantes/login", to: "loginvisitantes#new"
+ post "visitantes/login", to: "loginvisitantes#create"
+   resources :contatos
+  resources :emails
+   resources :visitanteinteressados
+     resources :perfils, only: [:new,  :create, :edit, :update]
+  resources :enderecos
+    get "perfil/index", to: "perfils#index"
+      get "ideia/index", to: "ideia#index" 
+   get "ideia/suasideias", to: "ideia#suasideias" 
+   get "ideium/:id", to: 'ideia#show', as: 'interessou'
+    get "suaideia/:id", to: 'ideia#suaideiashow', as: 'suaideia'
+   resources :ideia, only: [:new, :create, :edit, :update]
+   get"/ideia/:id" => "ideia#destroy"
+    
+    resources :useradmin, only: [:new, :create, :edit, :update]
+    get 'useradmin/index', to: "useradmin#index"
+    resources :modulos, only: [:new, :create, :edit, :update]
+    get 'modulos/index', to: "modulos#index"
+
+  resources :motivos, only: [:new, :create, :edit, :update]
+  get 'motivos/index', to: "motivos#index"
+  resources :agendas, only: [:new, :create, :edit, :update]
+  get 'agendas/index', to: "agendas#index"
+  resources :statuses, only: [:new, :create, :edit, :update]
+  
+  resources :tipos, only: [:new, :create, :edit, :update]
+  resources :empresas, only: [:new, :create, :edit, :update]
+  get 'empresa/index', to: "empresas#index"
 
  
 
- #get 'home#index'
+ #get ihome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

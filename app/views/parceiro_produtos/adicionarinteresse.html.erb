@@ -1,0 +1,60 @@
+<section class="content-header">
+    <div class="box-produtos">
+        <div class="box-header">
+            <h3 class="box-title">Encontre uma solução para seus problemas...</h3>
+
+            <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- /.box-header -->
+<div class="container">
+    <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+
+            </tr>
+
+
+            <% @produtos.each do |interesse| %>
+
+                <tr>
+                    <td>
+                        <%= interesse.id %>
+                    </td>
+                    <td>
+                        <%= interesse.descricao %>
+                    </td>
+
+
+                    <td>
+                        <%= link_to 'Adicionar', interesse_path(interesse), class: 'btn btn-success' %>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+
+
+                </tr>
+
+                <%end%>
+        </table>
+
+        <!-- /.box-body -->
+    </div>
+    <div class="buton-palavrachave">
+        <!-- <%= link_to "Vincular Palavras Chaves",  new_produto_chafe_path, class: "btn btn-warning "%> -->
+    </div>
+</div>

@@ -1,6 +1,13 @@
-
-
-<%= render "form" %>
-<div class="control-group col-md-4 col-md-offset-4">
-<%= link_to "Back", root_path %>
-</div>
+<section class="content-header">
+    <h1>Grupos</h1>
+    <ol class="breadcrumb">
+        <a class="btn btn-app" href="<%= grupos_index_path %>">
+            <i class="fa fa-reply"></i> Voltar
+        </a>
+    </ol>
+</section>
+<section class="content">
+    <div class="container">
+        <%= render "form" %>
+    </div>
+</section>

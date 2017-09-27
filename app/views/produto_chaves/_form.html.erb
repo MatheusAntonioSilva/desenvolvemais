@@ -23,27 +23,18 @@
                                 <%= f.collection_select :produto_id, @produto, :id, :descricao, {}, class: 'form-control ', rows: 5 %>
                             </div>
                     </div>
-
-                    <li>
-
-
-                    </li>
-                    <% @palavras_chafe.each do |palavra| %>
-
-                        <div class="checkbox">
-
-
-                            <label><%= h palavra.palavra -%></label>
-                            <%= f.check_box_tag 'palavrachafe_id[]', palavra.id  %>
-
-
-                        </div>
-                        <% end %>
-                            <div class="control-group controls">
-                                <%= f.submit class: 'btn btn-primary' %>
+                    <div class="control-group">
+                        <%= f.label :'Produtos:', class: 'control-label' %>
+                            <div class="controls">
+                                <%= f.collection_select :palavrachafe_id, @palavras_chafe, :id, :palavra, {},:multiple => true, class: 'form-control ', rows: 5 %>
                             </div>
+                    </div>
 
-                            <% end %>
+                    <div class="control-group controls">
+                        <%= f.submit class: 'btn btn-primary' %>
+                    </div>
+
+                    <% end %>
 
         </div>
 </div>

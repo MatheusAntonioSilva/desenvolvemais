@@ -1,6 +1,13 @@
-<h1>Alteração de Produto</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show' %> |
-<%= link_to 'Back'%>
+<section class="content-header">
+    <h1>Grupos</h1>
+    <ol class="breadcrumb">
+        <a class="btn btn-app" href="<%= grupos_index_path %>">
+            <i class="fa fa-reply"></i> Voltar
+        </a>
+    </ol>
+</section>
+<section class="content">
+    <div class="container">
+        <%= render "form" %>
+    </div>
+</section>

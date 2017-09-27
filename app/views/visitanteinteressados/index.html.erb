@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Visitanteinteressados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visitanteinteressados.each do |visitanteinteressado| %>
+      <tr>
+        <td><%= visitanteinteressado.name %></td>
+        <td><%= link_to 'Show', visitanteinteressado %></td>
+        <td><%= link_to 'Edit', edit_visitanteinteressado_path(visitanteinteressado) %></td>
+        <td><%= link_to 'Destroy', visitanteinteressado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visitanteinteressado', new_visitanteinteressado_path %>

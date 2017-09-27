@@ -1,0 +1,60 @@
+<%= form_for(@agenda, html: { class: 'form-horizontal' }) do |f| %>
+
+
+    <!-- <%= link_to 'Homepage', root_path, data: { keybinding: 'h' }   %> -->
+    <% if @agenda.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@agenda.errors.count, "error") %> prohibited this agenda from being saved:</h2>
+
+            <ul>
+                <% @agenda.errors.full_messages.each do |message| %>
+                    <li>
+                        <%= message %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <% end %>
+
+            <div class="control-group">
+                <%= f.label :descricao %><br>
+                    <%= f.text_field :descricao %>
+            </div>
+            <div class="control-group">
+                <%= f.label :'Nome do Cliente' %><br>
+                    <%= f.text_field :name %>
+            </div>
+            <div class="control-group">
+                <%= f.label :'Tipo de Projeto', class: 'control-label' %>
+                    <div class="controls">
+                        <%= f.collection_select :motivo_id, @motivo, :id, :descricao, {}, class: 'form-control ', rows: 5 %>
+                    </div>
+            </div>
+            <div class="control-group">
+                <%= f.label :data %><br>
+                    <%= f.date_select :data %>
+            </div>
+            <div class="control-group">
+                <%= f.label :horario_inicio %><br>
+                    <%= f.time_select :horario_inicio %>
+            </div>
+            <div class="control-group">
+                <%= f.label :horario_fim %><br>
+                    <%= f.time_select :horario_fim %>
+            </div>
+
+            <%=f.hidden_field :empresa_id, :value => current_user.empresa_id %>
+                <div class="control-group">
+                    <%= f.label :produto_id %><br>
+                        <%= f.number_field :produto_id %>
+                </div>
+
+                <div class="control-group">
+                    <%= f.label :observacao %><br>
+                        <%= f.text_area :observacao %><br>
+                </div>
+                <div class="control-group controls">
+                    <%= f.submit class: 'btn btn-primary' %>
+                </div>
+                <% end %>

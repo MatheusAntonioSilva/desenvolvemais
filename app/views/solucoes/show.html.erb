@@ -1,0 +1,185 @@
+<!-- Navigation -->
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                <%= @solucoe.descricao%>
+                    <small>Item Subheading</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-8">
+            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+        </div>
+
+        <div class="col-md-4">
+            <h3>
+                <%= @solucoe.descricao%>
+            </h3>
+            <p>
+                <%= @solucoe.descricaocompleta %>
+            </p>
+            <h3>Solução para:</h3>
+            <ul>
+                <% if @solucoe.gestao == 1 %>
+                    <li>Gestão</li>
+                    <%end%>
+                        <% if @solucoe.compra == 1 %>
+                            <li>Compra</li>
+                            <%end%>
+                                <% if @solucoe.venda == 1 %>
+                                    <li>Vendas</li>
+                                    <%end%>
+                                        <% if @solucoe.estoque == 1 %>
+                                            <li>Estoque</li>
+                                            <%end%>
+                                                <% if @solucoe.ecommerce == 1 %>
+                                                    <li>E-commerce</li>
+                                                    <%end%>
+                                                        <% if @solucoe.jogos == 1 %>
+                                                            <li>Jogos</li>
+                                                            <%end%>
+                                                                <% if @solucoe.infraestrutura == 1 %>
+                                                                    <li>Infraestrutura</li>
+                                                                    <%end%>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="interessou">
+                <a href="<%= new_visitante_path %>" class="btn btn-primeiro btn-lg"><i></i> <span class="network-name">Interessou? Clique Aqui!</span></a><br><br><br>
+            </div>
+            <div class="well text-center">
+                This is a well that is a great spot for a business tagline or phone number for easy access!
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4">
+            <h2>Heading 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4">
+            <h2>Heading 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Related Projects Row -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Projects</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="row">
+            <div class="featurette" id="about">
+                <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+                <h2 class="featurette-heading">This First Heading
+                    <span class="text-muted">Will Catch Your Eye</span>
+                </h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row">
+            <!-- Second Featurette -->
+            <div class="featurette" id="services">
+                <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+                <h2 class="featurette-heading">The Second Heading
+                    <span class="text-muted">Is Pretty Cool Too.</span>
+                </h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row">
+            <!-- Third Featurette -->
+            <div class="featurette" id="contact">
+                <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+                <h2 class="featurette-heading">The Third Heading
+                    <span class="text-muted">Will Seal the Deal.</span>
+                </h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+    </div>
+
+
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </div>
+    <!-- /.row -->
+</footer>
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->

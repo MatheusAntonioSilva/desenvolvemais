@@ -5,18 +5,24 @@ class ProdutoChavesController < ApplicationController
   # GET /produto_chaves.json
   def index
     @produto_chaves = ProdutoChave.all
+    @produto = Produto.all
+    @palavras_chafe = PalavrasChafe.all
+
   end
 
   # GET /produto_chaves/1
   # GET /produto_chaves/1.json
   def show
+   @produto = Produto.find(params[:id]).all
+   @palavras_chafe = PalavrasChafe.all
   end
 
   # GET /produto_chaves/new
   def new
-    @produto_chafe = ProdutoChave.new
     @produto = Produto.all
     @palavras_chafe =  PalavrasChafe.all
+    @produto_chafe = ProdutoChave.new
+
     
   end
 
@@ -30,16 +36,12 @@ class ProdutoChavesController < ApplicationController
   # POST /produto_chaves
   # POST /produto_chaves.json
   def create
-    @produto_chafe = ProdutoChave.new(produto_chafe_params)
+    @produto_chafe = ProdutoChave.new(params[:produto_chave].permit(:produto_id,   :palavrachafe_id))
 
-    respond_to do |format|
-      if @produto_chafe.save
-        format.html { redirect_to @produto_chafe, notice: 'Produto chave was successfully created.' }
-        format.json { render :show, status: :created, location: @produto_chafe }
-      else
-        format.html { render :new }
-        format.json { render json: @produto_chafe.errors, status: :unprocessable_entity }
-      end
+   if @produto_chafe.save
+      redirect_to produtos_index_path, notice: "Usuário Cadastrado com sucesso"
+    else
+      render action: "new"
     end
   end
 
@@ -48,11 +50,11 @@ class ProdutoChavesController < ApplicationController
   def update
     respond_to do |format|
       if @produto_chafe.update(produto_chafe_params)
-        format.html { redirect_to @produto_chafe, notice: 'Produto chave was successfully updated.' }
+        format.html { redirect_to  new_produto_chafe_path, notice: 'Produto chave was successfully updated.' }
         format.json { render :show, status: :ok, location: @produto_chafe }
       else
         format.html { render :edit }
-        format.json { render json: @produto_chafe.errors, status: :unprocessable_entity }
+        format.json { render json:  new_produto_chafe_path.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -67,10 +69,9 @@ class ProdutoChavesController < ApplicationController
     end
   end
 
-  private
     # Use callbacks to share common setup or constraints between actions.
     def set_produto_chafe
-      @produto_chafe = ProdutoChave.find(params[:id])
+      @produto_chafe = ProdutoChave.find(params[:produto_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

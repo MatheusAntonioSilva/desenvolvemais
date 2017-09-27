@@ -1,0 +1,72 @@
+<div class="formuser">
+    <h3>Exiba suas idéias e Projetos, Faça um Cadastro Conosco!</h3>
+    <%= form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
+
+        <% if @user.errors.any? %>
+            <div class="alert alert-error">
+                <h3>
+                    <%= pluralize(@user.errors.count, "error") %> prohibited this job from being saved:</h3>
+
+                <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                        <li>
+                            <%= msg %>
+                        </li>
+                        <% end %>
+                </ul>
+            </div>
+            <% end %>
+
+                <div class="control-group">
+                    <%= f.label :name, class: 'control-label' %>
+                        <div class="controls">
+                            <%= f.text_field :name %>
+                        </div>
+                </div>
+                <div class="control-group">
+                    <%= f.label :email, class: 'control-label' %>
+                        <div class="controls">
+                            <%= f.text_field :email %>
+                        </div>
+                </div>
+                <div class="control-group">
+                    <%= f.label :password, class: 'control-label' %>
+                        <div class="controls">
+                            <%= f.password_field :password %>
+                        </div>
+                </div>
+                <div class="control-group">
+                    <%= f.label :password_confirmation, class: 'control-label' %>
+                        <div class="controls">
+                            <%= f.password_field :password_confirmation %>
+                        </div>
+                </div>
+                <%= f.fields_for :perfil  do |perfil_fields| %>
+                    <%= perfil_fields.hidden_field :user_id, :value => current_user.id %>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Fale um pouco sobre você</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <%= perfil_fields.text_field :descricao %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Quais seus objetivos profissionais?</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <%= perfil_fields.text_field :objetivo %>
+
+                                </div>
+                            </div>
+                        </div>
+                        <%end%>
+
+                            <div class="control-group controls">
+                                <%= f.submit class: 'btn btn-primary' %>
+                            </div>
+
+                            <% end %>
+</div>

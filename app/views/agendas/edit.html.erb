@@ -1,0 +1,18 @@
+<section class="content-header">
+
+    <h1>Agenda</h1>
+    <ol class="breadcrumb">
+        <a class="btn btn-app" href="<%= agendas_index_path %>">
+            <i class="fa fa-reply"></i> Voltar
+        </a>
+    </ol>
+</section>
+<section class="content">
+    <div class="container">
+        <%if current_user.empresa_id == @agenda.empresa_id %>
+            <%= render "form" %>
+
+                <%end%>
+
+    </div>
+</section>

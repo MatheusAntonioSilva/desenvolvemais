@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  data: 2017-08-07
+  horario_inicio: 2017-08-07 22:41:04
+  horario_fim: 2017-08-07 22:41:04
+  user_id: 1
+  empresa_id: 1
+  produto_id: 1
+  motivo_id: 1
+  observacao: MyString
+
+two:
+  descricao: MyString
+  data: 2017-08-07
+  horario_inicio: 2017-08-07 22:41:04
+  horario_fim: 2017-08-07 22:41:04
+  user_id: 1
+  empresa_id: 1
+  produto_id: 1
+  motivo_id: 1
+  observacao: MyString

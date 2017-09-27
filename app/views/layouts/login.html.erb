@@ -1,33 +1,105 @@
 <head>
-  <title>Sistema</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title>Sistema</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+            <%= csrf_meta_tags %>
 </head>
+
 <body>
- <%= nav_bar fixed: :top, brand: "+Informação" do %>
-    <%= menu_group do %>
-        <%= menu_item "Home", root_path %>
-        <%= menu_item "Resolva seu Problema", solucoes_path %>
-        <%= menu_item "Colaboradores" %>
-        <%= menu_item "Contato" %>
-        <% end %>
-        <ul class="nav navbar-nav navbar-right">
-        <li><a href="<%= login_path %>">Login</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastra-se <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="<%= newinteressado_path %>">Usuário Atrás de Soluções</a></li>
-            <li><a href="<%= newcompany_path %>">Empresa de TI</a></li>
-            <li><a href="<%= newestudante_path %>">Estudante</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="<%= newinvestidor_path %>">Investidores</a></li>
-          </ul>
-    
-<% end %>
-<div class="yield">
-<%= yield %>
-</div>
+    <%= nav_bar class: 'navbar navbar-default navbar-static', fixed: :top, brand: "+Informação" do %>
+        <%= menu_group do %>
+            <%= menu_item "Home", root_path %>
+                <%= menu_item "Resolva seu Problema", solucoes_path %>
+                    <div class="navbar-header">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown dropdown-large">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soluções<b class="caret"></b></a>
+
+                                <ul class="dropdown-menu dropdown-menu-large row">
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Tecnologia da Informação</li>
+                                            <li><a href="#">Available glyphs</a></li>
+                                            <li class="disabled"><a href="#">How to use</a></li>
+                                            <li><a href="#">Examples</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">Assistencia Técnica</li>
+                                            <li><a href="#">Example</a></li>
+                                            <li><a href="#">Aligninment options</a></li>
+                                            <li><a href="#">Headers</a></li>
+                                            <li><a href="#">Disabled menu items</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Contabilidade</li>
+                                            <li><a href="#">Basic example</a></li>
+                                            <li><a href="#">Button toolbar</a></li>
+                                            <li><a href="#">Sizing</a></li>
+                                            <li><a href="#">Nesting</a></li>
+                                            <li><a href="#">Vertical variation</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">Reformas</li>
+                                            <li><a href="#">Single button dropdowns</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Automoveis</li>
+                                            <li><a href="#">Basic example</a></li>
+                                            <li><a href="#">Sizing</a></li>
+                                            <li><a href="#">Checkboxes and radio addons</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">Consultorias</li>
+                                            <li><a href="#">Tabs</a></li>
+                                            <li><a href="#">Pills</a></li>
+                                            <li><a href="#">Justified</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Outros</li>
+                                            <li><a href="#">Default navbar</a></li>
+                                            <li><a href="#">Buttons</a></li>
+                                            <li><a href="#">Text</a></li>
+                                            <li><a href="#">Non-nav links</a></li>
+                                            <li><a href="#">Component alignment</a></li>
+                                            <li><a href="#">Fixed to top</a></li>
+                                            <li><a href="#">Fixed to bottom</a></li>
+                                            <li><a href="#">Static top</a></li>
+                                            <li><a href="#">Inverted navbar</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <%= menu_item "Colaboradores" %>
+                        <%= menu_item "Contato" %>
+                            <%= menu_item "Agenda Eletrônica" %>
+
+
+                                <!-- /.nav-collapse -->
+
+                                <% end %>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="<%= login_path %>">Login</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastra-se <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="<%= newinteressado_path %>">Usuário Atrás de Soluções</a></li>
+                                                <li><a href="<%= newcompany_path %>">Empresas</a></li>
+                                                <li><a href="<%= newestudante_path %>">Estudante</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="<%= newinvestidor_path %>">Investidores</a></li>
+                                            </ul>
+
+                                            <% end %>
+                                                <div class="yield">
+                                                    <%= yield %>
+                                                </div>
 
 
 </body>

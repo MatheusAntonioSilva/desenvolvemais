@@ -10,9 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require jquery
 //= require bootstrap
 //= require adminlte
 //= require turbolinks
+//= require cocoon 
+//= require mousetrap 
+// requer mousetrap / plugins # Para exigir todos os plugins 
+// = requer mousetrap / dictionary # Para exigir o plugin do dicionário 
+// = requer mousetrap / global # Para requerer o plugin global 
+// = requerer ratoeira / pausa # Para requerer o plugin de pausa 
+// = Requer mousetrap / record # Para exigir o plugin de registro   
 //= require_tree .

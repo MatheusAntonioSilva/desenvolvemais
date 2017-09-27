@@ -4,7 +4,7 @@ class PlataformasController < ApplicationController
   # GET /plataformas
   # GET /plataformas.json
   def index
-      @plataforma = TipoProjeto.all
+      @plataforma = current_user.plataformas
 
     respond_to do |format|
       format.html  #index.html.erb
@@ -19,17 +19,18 @@ class PlataformasController < ApplicationController
 
   # GET /plataformas/new
   def new
-    @plataforma = Plataforma.new
+    @plataforma = current_user.plataformas.build
   end
 
   # GET /plataformas/1/edit
   def edit
+    @plataforma = current_user.plataformas.find(params[:id])
   end
 
   # POST /plataformas
   # POST /plataformas.json
   def create
-    @plataforma = Plataforma.new(plataforma_params)
+    @plataforma = current_user.plataformas.build(plataforma_params)
 
     respond_to do |format|
       if @plataforma.save
@@ -45,6 +46,7 @@ class PlataformasController < ApplicationController
   # PATCH/PUT /plataformas/1
   # PATCH/PUT /plataformas/1.json
   def update
+    @plataforma = current_user.plataformas.find(params[:id])
     respond_to do |format|
       if @plataforma.update(plataforma_params)
         format.html { redirect_to plataformas_index_path, notice: 'Plataforma was successfully updated.' }
@@ -59,6 +61,7 @@ class PlataformasController < ApplicationController
   # DELETE /plataformas/1
   # DELETE /plataformas/1.json
   def destroy
+    @plataforma = current_user.plataformas.find(params[:id])
     @plataforma.destroy
     respond_to do |format|
       format.html { redirect_to plataformas_index_path, notice: 'Plataforma was successfully destroyed.' }

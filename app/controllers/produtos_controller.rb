@@ -1,11 +1,12 @@
 class ProdutosController < ApplicationController
-   before_filter :authorize_user, only: [:show, :edit, :update, :destroy, :index]
+   before_filter :authorize_user, only: [:show, :edit, :destroy, :index]
 
 def new
-    @produto = Produto.new
-    @tipo_projeto = TipoProjeto.all
+    @produto = current_user.produtos.build
+    @tipo_projeto = TipoProjeto.where(user_id: current_user)
     @plataforma = Plataforma.all
-    @grupos = Grupo.all
+    @modulos = Modulo.all
+    @grupos = Grupo.where(user_id: current_user)
     @marcas = Marca.all
     @subgrupos = Subgrupo.all
     @classificacoes = Classificacoe.all
@@ -13,8 +14,7 @@ def new
   end
 
   def create
-    @produto = Produto.new(params[:produto].permit(:descricao, :codbarra, :codfabrica, :unidade, :grupo_id, :marca_id, :classificacoe_id, :tipoprojeto_id,  :preco_venda, :preco_custo, :margem_bruta, :descricaocompleta, :plataforma_id,  { :palavras_chafe_id => [] }))
-
+    @produto = current_user.produtos.build(produto_params)
     if @produto.save
       redirect_to produtos_index_path, notice: "Usuário Cadastrado com sucesso"
     else
@@ -23,11 +23,12 @@ def new
   end
 
   def edit
-    @produto =Produto.all
-    @produto = Produto.find(params[:id])
-    @tipo_projeto = TipoProjeto.all
+
+    @produto = current_user.produtos.find(params[:id])
+    @tipo_projeto = TipoProjeto.where(user_id: current_user)
     @plataforma = Plataforma.all
-    @grupos = Grupo.all
+     @modulos = Modulo.all
+    @grupos = Grupo.where(user_id: current_user)
     @marcas = Marca.all
     @subgrupos = Subgrupo.all
     @classificacoes = Classificacoe.all
@@ -38,6 +39,7 @@ def new
   end
 
    def update
+        @produto = current_user.produtos.find(params[:id])
     respond_to do |format|
       if @produto.update(produto_params)
         format.html { redirect_to produtos_index_path, notice: "Produto Alterado com sucesso" }
@@ -51,8 +53,10 @@ def new
   end
 
    def index
-    @produtos = Produto.all
+    
 
+    @produtos = current_user.produtos.where(user_id: current_user)
+    
     respond_to do |format|
       format.html  #index.html.erb
       format.json {render json: @produtos}
@@ -60,19 +64,28 @@ def new
 
   end
 
+  def show
+  
+    end
+
    def destroy
-      id = params[:id]
-      Produto.destroy id
+      @produto = current_user.produtos.find(params[:id])
+      @produto.destroy 
       redirect_to produtos_index_path
     end
 
+   def associacao
+    
+    redirect_to :action=>"new", :controller=>"produto_chaves", :params =>":id"
+
+    end
 
       def set_produto
       @produto= Produto.find(params[:id])
     end
 
   def produto_params
-      params.require(:produto).permit(:descricao, :codbarra, :codfabrica, :unidade, :id, :marca_id, :preco_venda, :preco_custo, :margem_bruta, :descricaocompleta, :tipoprojeto_id,  :plataforma_id)
+      params.require(:produto).permit(:descricao, :codbarra, :codfabrica, :unidade, :grupo_id, :marca_id, :classificacoe_id, :tipoprojeto_id,  :preco_venda, :preco_custo, :margem_bruta, :descricaocompleta, :plataforma_id, :gestao, :compra, :venda, :ecommerce, :infraestrutura, :jogos, :estoque, :modulo_id)
       #params.require(:comment).permit(:id, :name, :body)
     end
 

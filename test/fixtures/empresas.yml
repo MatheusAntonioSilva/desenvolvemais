@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  razsocial: MyString
+  cnpj: 
+  fantasia: MyString
+  data_contrato: 2017-08-07
+  data_vencimento: 2017-08-07
+  token: MyString
+  valor: 1.5
+  status_id: 1
+  tipo_id: 1
+
+two:
+  razsocial: MyString
+  cnpj: 
+  fantasia: MyString
+  data_contrato: 2017-08-07
+  data_vencimento: 2017-08-07
+  token: MyString
+  valor: 1.5
+  status_id: 1
+  tipo_id: 1

@@ -1,85 +1,93 @@
 <%= form_for(@parceiro) do |f| %>
-  <% if @parceiro.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@parceiro.errors.count, "error") %> prohibited this parceiro from being saved:</h2>
+    <div class="container row">
+        <% if @parceiro.errors.any? %>
+            <div id="error_explanation">
+                <h2>
+                    <%= pluralize(@parceiro.errors.count, "error") %> prohibited this parceiro from being saved:</h2>
 
-      <ul>
-      <% @parceiro.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                    <%= @parceiro.errors.full_messages.each do |message| %>
+                        <li>
+                            <%= message %>
+                        </li>
+                        <% end %>
+                </ul>
+            </div>
+            <% end %>
+                <div class="check-box">
+
+                    <%= f.label :'Cliente:' %>
+                        <%= f.check_box :cliente, class: 'check-box2' %>
+
+                            <%= f.label :'Forncedor:' %>
+                                <%= f.check_box :fornecedor, class: 'check-box2' %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Nome:' %><br>
+                        <%= f.text_field :nome %>
+                </div>
+                <div class="check-box">
+
+                    <%= f.label :'Pessoa Física:' %>
+                        <%= f.check_box :fisica_juridica, class: 'check-box2' %>
+                </div>
+                <div class="field">
+                    <%= f.label :'CNPJ:' %><br>
+                        <%= f.text_field :cpf_cnpj %>
+                </div>
+                <div class="field">
+                    <%= f.label :'RG:' %><br>
+                        <%= f.text_field :rg %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Telefone:' %><br>
+                        <%= f.text_field :telefone %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Apelido:' %><br>
+                        <%= f.text_field :apelido %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :'Data Nascimento:'%><br>
+                        <%= f.date_select :dt_nacimento %>
+                </div>
+
+
+                <div class="field">
+                    <%= f.label :'CEP:' %><br>
+                        <%= f.text_field :cep %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Endereco:' %><br>
+                        <%= f.text_field :endereco %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Numero:' %><br>
+                        <%= f.text_field :numero %>
+                </div>
+                <div class="field">
+                    <%= f.label :'IBGE:' %><br>
+                        <%= f.text_field :ibge %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Bairro:' %><br>
+                        <%= f.text_field :bairro %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Cidade:' %><br>
+                        <%= f.text_field :cidade %>
+                </div>
+                <div class="field">
+                    <%= f.label :'UF:' %><br>
+                        <%= f.text_field :uf %>
+                </div>
+                <div class="field">
+                    <%= f.label :'Pais' %><br>
+                        <%= f.text_field :pais %>
+                </div>
+                <div class="control-group controls">
+                    <%= f.submit class: 'btn btn-primary' %>
+                </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf_cnpj %><br>
-    <%= f.text_field :cpf_cnpj %>
-  </div>
-  <div class="field">
-    <%= f.label :rg %><br>
-    <%= f.text_field :rg %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :apelido %><br>
-    <%= f.text_field :apelido %>
-  </div>
-  <div class="field">
-    <%= f.label :fisica_juridica %><br>
-    <%= f.check_box :fisica_juridica %>
-  </div>
-  <div class="field">
-    <%= f.label :dt_nacimento %><br>
-    <%= f.date_select :dt_nacimento %>
-  </div>
-  <div class="field">
-    <%= f.label :cliente %><br>
-    <%= f.check_box :cliente %>
-  </div>
-  <div class="field">
-    <%= f.label :fornecedor %><br>
-    <%= f.check_box :fornecedor %>
-  </div>
-  <div class="field">
-    <%= f.label :cep %><br>
-    <%= f.text_field :cep %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :numero %><br>
-    <%= f.text_field :numero %>
-  </div>
-  <div class="field">
-    <%= f.label :ibge %><br>
-    <%= f.text_field :ibge %>
-  </div>
-  <div class="field">
-    <%= f.label :bairro %><br>
-    <%= f.text_field :bairro %>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <%= f.text_field :cidade %>
-  </div>
-  <div class="field">
-    <%= f.label :uf %><br>
-    <%= f.text_field :uf %>
-  </div>
-  <div class="field">
-    <%= f.label :pais %><br>
-    <%= f.text_field :pais %>
-  </div>
-     <div class="control-group controls">
-    <%= f.submit class: 'btn btn-primary' %>
-  </div>
-<% end %>
+    <% end %>

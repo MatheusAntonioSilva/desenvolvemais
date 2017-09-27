@@ -1,11 +1,11 @@
 class GruposController < ApplicationController
   before_filter :authorize_user, only: [:show, :edit, :update, :destroy, :index]
 def new
-    @grupo = Grupo.new
+    @grupo = current_user.grupos.build
   end
 
   def create
-    @grupo = Grupo.new(params[:grupo].permit(:descricao))
+    @grupo = current_user.grupos.build(params[:grupo].permit(:descricao))
 
     if @grupo.save
       redirect_to grupos_index_path, notice: "Grupo Cadastrado com sucesso"
@@ -15,7 +15,7 @@ def new
   end
 
    def index
-    @grupo = Grupo.all
+    @grupo = current_user.grupos
 
     respond_to do |format|
       format.html  #index.html.erb
@@ -25,14 +25,14 @@ def new
   end
 
   def edit
-    @grupo =Grupo.all
-    @grupo = Grupo.find(params[:id])
+    @grupo = current_user.grupos.find(params[:id])
 
 
   end
 
    def update
-    respond_to do |format|
+     @grupo = current_user.grupos.find(params[:id])
+    respond_to do |format|      
       if @grupo.update(grupo_params)
         format.html { redirect_to grupos_index_path, notice: "Grupo Alterada com Sucesso" }
         format.json { render :show, status: :ok, location: @grupo}
@@ -45,8 +45,8 @@ def new
   end
 
   def destroy
-      id = params[:id]
-      Grupo.destroy id
+      @grupo = current_user.grupos.find(params[:id])
+      @grupo.destroy
       redirect_to grupos_index_path
     end
 

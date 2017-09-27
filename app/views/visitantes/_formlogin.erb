@@ -1,0 +1,25 @@
+<%= form_for(User.new, url:  login_path, html: { class: 'form-horizontal' }) do |f| %>
+ 
+ <div class="row">
+
+ <h3>Entre na sua conta</h3>
+
+
+
+    <%= f.label :email, class: 'control-label div-email' %>
+    <div class="controls ">
+      <%= f.text_field :email %>
+    </div>
+
+    <%= f.label :password, class: 'control-label' %>
+    <div class="controls ">
+      <%= f.password_field :password %>
+    </div>
+
+ 
+    <%= f.submit "Login", class: 'btn btn-primary' %>
+  </div>
+  </div>
+  
+
+<% end %>

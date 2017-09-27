@@ -1,32 +1,29 @@
-<div class="container">
+<%= form_for(@plataforma, html: { class: 'form-horizontal' }) do |f| %>
+    <div class="row">
+        <% if @plataforma.errors.any? %>
+            <div class="alert alert-error">
+                <h3>
+                    <%= pluralize(@plataforma.errors.count, "error") %> prohibited this job from being saved:</h3>
 
-    <%= form_for(@plataforma, html: { class: 'form-horizontal' }) do |f| %>
-        <div class="row">
-            <% if @plataforma.errors.any? %>
-                <div class="alert alert-error">
-                    <h3>
-                        <%= pluralize(@plataforma.errors.count, "error") %> prohibited this job from being saved:</h3>
+                <ul>
+                    <% @plataforma.errors.full_messages.each do |msg| %>
+                        <li>
+                            <%= msg %>
+                        </li>
+                        <% end %>
+                </ul>
+            </div>
+            <% end %>
 
-                    <ul>
-                        <% @plataforma.errors.full_messages.each do |msg| %>
-                            <li>
-                                <%= msg %>
-                            </li>
-                            <% end %>
-                    </ul>
+                <div class="control-group">
+                    <%= f.label :'Produtos:', class: 'control-label' %>
+                        <div class="controls">
+                            <%= f.text_field :plataforma%>
+                        </div>
                 </div>
-                <% end %>
+                <div class="control-group controls">
+                    <%= f.submit class: 'btn btn-primary' %>
+                </div>
+    </div>
 
-                    <div class="control-group">
-                        <%= f.label :'Produtos:', class: 'control-label' %>
-                            <div class="controls">
-                                <%= f.text_field :plataforma%>
-                            </div>
-                    </div>
-                    <div class="control-group controls">
-                        <%= f.submit class: 'btn btn-primary' %>
-                    </div>
-
-                    <% end %>
-        </div>
-</div>
+    <% end %>

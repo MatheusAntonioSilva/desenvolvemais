@@ -4,7 +4,7 @@ class ParceirosController < ApplicationController
   # GET /parceiros
   # GET /parceiros.json
   def index
-    @parceiro = Parceiro.all
+    @parceiro = current_user.parceiros
 
     respond_to do |format|
       format.html  #index.html.erb
@@ -17,17 +17,18 @@ end
 
   # GET /parceiros/new
   def new
-    @parceiro = Parceiro.new
+    @parceiro = current_user.parceiros.build
   end
 
   # GET /parceiros/1/edit
   def edit
+    @parceiro = current_user.parceiros.find(params[:id])
   end
 
   # POST /parceiros
   # POST /parceiros.json
   def create
-    @parceiro = Parceiro.new(parceiro_params)
+    @parceiro = current_user.parceiros.build(parceiro_params)
 
     respond_to do |format|
       if @parceiro.save
@@ -43,6 +44,7 @@ end
   # PATCH/PUT /parceiros/1
   # PATCH/PUT /parceiros/1.json
   def update
+    @parceiro = current_user.parceiros.find(params[:id])
     respond_to do |format|
       if @parceiro.update(parceiro_params)
         format.html { redirect_to parceiros_index_path, notice: 'Parceiro was successfully updated.' }
@@ -57,6 +59,7 @@ end
   # DELETE /parceiros/1
   # DELETE /parceiros/1.json
   def destroy
+    @parceiro = current_user.parceiros.find(params[:id])
     @parceiro.destroy
     respond_to do |format|
       format.html { redirect_to parceiros_url, notice: 'Parceiro was successfully destroyed.' }

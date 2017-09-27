@@ -1,0 +1,21 @@
+<div class="nested-fields">
+    <div class="field">
+
+        <div class="enderecof">
+            <span>Endereço:</span>
+            <%= f.text_field :endereco, class: 'endereco-text' %>
+                <%= link_to_remove_association('Excluir', f ) %>
+        </div>
+        <div class="numerof">
+            <span>Numero:</span>
+            <%= f.text_field :numero, class: 'endereco-text' %>
+                <%= link_to_remove_association('Excluir', f ) %>
+        </div>
+        <div class="cepf">
+            <span>CEP:</span>
+            <%= f.text_field :cep, class: 'endereco-text' %>
+                <%= link_to_remove_association('Excluir', f ) %>
+        </div>
+    </div>
+
+</div>

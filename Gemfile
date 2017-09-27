@@ -1,16 +1,33 @@
 source 'https://rubygems.org'
 
 
+#
+gem 'jquery'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-gem 'ruby' '2.3.1'
+gem 'cocoon'
+gem  'mousetrap-rails'
+gem 'rack-cors'
+gem 'devise'
+gem 'jquery-ui-rails', '~> 4.2.1'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'i18n'
+
+
+
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: [:development, :test ]
+gem 'sqlite3', :group => [:development, :test]
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -33,27 +50,25 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bcrypt-ruby'
+gem 'bcrypt', '~> 3.1.7'
 
-group :development, :test do
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
- gem 'bootstrap-sass'
+
  gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
-gem 'font-awesome-sass'
+gem 'sass'
 
 source 'https://rails-assets.org/' do 
   gem 'rails-assets-adminlte'
-end
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+end
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'will_paginate'
-end
 

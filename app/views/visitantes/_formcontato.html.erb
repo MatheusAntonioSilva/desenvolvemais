@@ -1,0 +1,52 @@
+<%= form_for(Visitanteinteressado.new, html: { class:'basic-grey' }) do |f| %>
+    <div class="basic-grey">
+        <h1>Interessou? Deixe seu contato
+            <span>Deixe seu contato para ver um orçamento.</span>
+        </h1>
+        <label>
+        <span>Nome:</span>
+        <%= f.text_field :name, placeholder: 'Digite seu nome' %>
+        
+    </label>
+        <label>
+    <div id="contatos">
+        <span><i class="fa fa-phone"></i> <%= link_to_add_association('Adicionar Telefone', f, :contatos) %></span>
+          <%= f.fields_for :contatos do |contatos_fields| %>
+                <%= render partial: "contato_fields", locals: {f: contatos_fields}  %>
+                    <% end %>
+    </div>
+    </label>
+        <label>
+    <div id="email">
+        <span><i class="fa fa-inbox"></i><%= link_to_add_association('Adicionar Email', f, :emails) %></span>
+          <%= f.fields_for :emails do |emails_fields| %>
+                <%= render partial: "email_fields", locals: {f: emails_fields}  %>
+                    <% end %>
+    </div>
+    </label>
+        <label>
+    <div id="endereco">
+        <span> <i class="fa fa-home"></i><%= link_to_add_association('Adicionar Endereco', f, :enderecos) %></span>
+          <%= f.fields_for :enderecos do |enderecos_fields| %>
+                <%= render partial: "endereco_fields", locals: {f: enderecos_fields}  %>
+                    <% end %>
+    </div>
+    
+        </label>
+        <label>
+        <span>Message :</span>
+        <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+    </label>
+        <label>
+        <span>Subject :</span><select name="selection">
+        <option value="Job Inquiry">Job Inquiry</option>
+        <option value="General Question">General Question</option>
+        </select>
+    </label>
+        <label>
+        <span>&nbsp;</span> 
+      
+         <%= f.submit class: 'button' , value: 'Enviar Contato'%>
+    </label>
+    </div>
+    <%end%>
